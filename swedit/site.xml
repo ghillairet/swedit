@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipselabs.swedit.jenarules.feature_0.1.0.201102262057.jar" id="org.eclipselabs.swedit.jenarules.feature" version="0.1.0.201102262057">
+      <category name="swedit"/>
+   </feature>
+   <feature url="features/org.eclipselabs.swedit.turtle.feature_0.1.0.201102262057.jar" id="org.eclipselabs.swedit.turtle.feature" version="0.1.0.201102262057">
+      <category name="swedit"/>
+   </feature>
+   <category-def name="swedit" label="SemWeb Languages Editors"/>
+</site>
