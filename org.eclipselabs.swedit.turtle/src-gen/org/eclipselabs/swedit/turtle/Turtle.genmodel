@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipselabs.swedit.turtle/src-gen"
+    editDirectory="/org.eclipselabs.swedit.turtle.edit/src" editorDirectory="/org.eclipselabs.swedit.turtle.editor/src"
+    modelPluginID="org.eclipselabs.swedit.turtle" forceOverwrite="true" modelName="Turtle"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipselabs.swedit.turtle.edit"
+    editorPluginID="org.eclipselabs.swedit.turtle.editor">
+  <genPackages prefix="Turtle" basePackage="org.eclipselabs.swedit.turtle" disposableProviderFactory="true"
+      ecorePackage="Turtle.ecore#/">
+    <genClasses ecoreClass="Turtle.ecore#//TurtleDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//TurtleDocument/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Statement"/>
+    <genClasses ecoreClass="Turtle.ecore#//Directive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//Directive/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Prefix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//Prefix/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Base"/>
+    <genClasses ecoreClass="Turtle.ecore#//Triple">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//Triple/subject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//Triple/predicateObjectList"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Subject"/>
+    <genClasses ecoreClass="Turtle.ecore#//PredicateObjectList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//PredicateObjectList/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//PredicateObjectList/objectList"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Verb"/>
+    <genClasses ecoreClass="Turtle.ecore#//AVerb">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//AVerb/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Resource"/>
+    <genClasses ecoreClass="Turtle.ecore#//ObjectList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//ObjectList/object"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Object"/>
+    <genClasses ecoreClass="Turtle.ecore#//Collection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//Collection/items"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Literal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//Literal/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//IntegerValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//RDFTag"/>
+    <genClasses ecoreClass="Turtle.ecore#//TypeTag">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//TypeTag/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//LangTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//LangTag/lang"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//URIRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//URIRef/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//QName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turtle.ecore#//QName/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//QName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Blank"/>
+    <genClasses ecoreClass="Turtle.ecore#//NodeID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//NodeID/nodeID"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//Void">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtle.ecore#//Void/nodeID"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtle.ecore#//BlankNodeContent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtle.ecore#//BlankNodeContent/predicateObjectList"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

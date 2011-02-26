@@ -1,0 +1,115 @@
+grammar org.eclipselabs.swedit.jenarules.JenaRules hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import 'http://www.eclipse.org/emf/2002/Ecore' as ecore
+generate jenaRules "http://www.eclipselabs.org/swedit/jenarules/JenaRules"
+
+JenaRuleDocument:
+	(prefixes+=Prefix)*
+	(rules+=Rule)*
+;
+
+Rule:
+	bareRule=BareRule |
+    '[' bareRule=BareRule ']' |
+   '['ruleName=ID ':' bareRule=BareRule ']'
+;
+
+Prefix:
+	'@prefix' name=ID ':' uri=IRI_TERMINAL '.'
+;
+
+BareRule:
+	ForwardRule 
+//	|
+//	BackWardRule
+;
+
+ForwardRule:
+	leftTerms+=Term (',' leftTerms+=Term)* '->'
+		rightTerms+=Term (',' rightTerms+=Term)*
+;
+
+//BackWardRule:
+//	left=ForwardRule '<-' rightTerms+=Term (rightTerms+=Term)*
+//;
+
+//HTerm:
+//     Term | BareRule
+//;
+ 
+Term:
+	'(' subject=Node predicate=Node object=Node ')'
+;
+
+Function:
+	name=ID '('nodes+=Node (',' nodes+=Node)* ')'
+;
+
+//          or   (node, node, functor)        // extended triple pattern
+//          or   builtin(node, ... node)      // invoke procedural primitive
+
+BHTerm: Term;
+
+Node:
+	URIRef |
+	QName |
+	Variable |
+	Literal |
+	Function
+;
+
+URIRef:
+	uri=IRI_TERMINAL
+;
+
+QName:
+	(prefix=[Prefix])? ':' name=ID
+;
+
+Variable:
+	'?'name=ID
+;
+
+Literal:
+	StringValue |
+	IntegerValue 
+;
+
+StringValue:
+	value=STRING (tag=RDFTag)?
+;
+
+IntegerValue:
+	value=INT (tag=RDFTag)?
+;
+
+RDFTag:
+	TypeTag |
+	LangTag
+;
+
+TypeTag hidden (WS):
+	'^^'type=QName
+;
+
+LangTag hidden (WS):
+	'@'lang=ID
+;
+
+terminal IRI_TERMINAL returns ecore::EString: 
+	'<' ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9'|'/'|':'|'.'|'#'|'?'|'@'|'$'|'&'|'=')* '>'
+;
+terminal STRING returns ecore::EString:
+		'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"'
+;
+terminal ID returns ecore::EString: 
+	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9'|'/'|'.'|'#'|'?')*
+;
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '#' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
+ 

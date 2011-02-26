@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipselabs.swedit.jenarules/src-gen"
+    editDirectory="/org.eclipselabs.swedit.jenarules.edit/src" editorDirectory="/org.eclipselabs.swedit.jenarules.editor/src"
+    modelPluginID="org.eclipselabs.swedit.jenarules" forceOverwrite="true" modelName="JenaRules"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipselabs.swedit.jenarules.edit"
+    editorPluginID="org.eclipselabs.swedit.jenarules.editor">
+  <genPackages prefix="JenaRules" basePackage="org.eclipselabs.swedit.jenarules" disposableProviderFactory="true"
+      ecorePackage="JenaRules.ecore#/">
+    <genClasses ecoreClass="JenaRules.ecore#//JenaRuleDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//JenaRuleDocument/prefixes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//JenaRuleDocument/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Rule/bareRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//Rule/ruleName"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Prefix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//Prefix/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//Prefix/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//BareRule"/>
+    <genClasses ecoreClass="JenaRules.ecore#//ForwardRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//ForwardRule/leftTerms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//ForwardRule/rightTerms"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Term">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Term/subject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Term/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Term/object"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//Function/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Function/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//BHTerm"/>
+    <genClasses ecoreClass="JenaRules.ecore#//Node"/>
+    <genClasses ecoreClass="JenaRules.ecore#//URIRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//URIRef/uri"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//QName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JenaRules.ecore#//QName/prefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//QName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//Literal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//Literal/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//IntegerValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//RDFTag"/>
+    <genClasses ecoreClass="JenaRules.ecore#//TypeTag">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JenaRules.ecore#//TypeTag/type"/>
+    </genClasses>
+    <genClasses ecoreClass="JenaRules.ecore#//LangTag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JenaRules.ecore#//LangTag/lang"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
